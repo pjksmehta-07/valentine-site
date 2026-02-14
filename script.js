@@ -67,7 +67,7 @@ const qrText = document.getElementById("qrText");
 const btnMakeQR = document.getElementById("btnMakeQR");
 
 // default link (change this to your real surprise link)
-const defaultLink = "/Users/stuti/Desktop/valentines site/Gmail - Your tickets for Tu Yaa Main (Hindi) at Vue Westfield Stratford.pdf";
+const defaultLink = "https://drive.google.com/file/d/1KPGBmeOyd2FKjI8lTp_AZLS4jj0QWwJt/view?usp=sharing";
 makeQR(defaultLink);
 qrText.value = defaultLink;
 
