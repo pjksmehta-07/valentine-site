@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>S ♥ Prah</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- QR generator (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <!-- Header / date badge -->
+    <div class="topbar">
+      <div class="hearts-left" aria-hidden="true">
+        <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+      </div>
+
+      <div class="date-badge" aria-label="Valentine's Day date">
+        <div class="badge-paper">
+          <div class="badge-ring"></div>
+          <div class="badge-text">
+            <div class="badge-day">14</div>
+            <div class="badge-month">FEB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 1 -->
+    <section class="screen active" id="screen-ask">
+      <div class="card">
+        <div class="bunnies" aria-hidden="true">🐰💞🐰</div>
+        <h1>Hey there,</h1>
+        <h2>Will you be my Valentine?</h2>
+
+        <div class="btn-row">
+          <button class="btn primary" id="btnYes">YES OF COURSE</button>
+          <button class="btn ghost" id="btnNo">NO THANK YOU</button>
+        </div>
+
+        <p class="tiny" id="noHint" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section class="screen" id="screen-gifts">
+      <div class="card wide">
+        <div class="big-title">
+          <span class="emoji">💗</span>
+          <div>
+            <h1>Yay, you said yes!</h1>
+            <p class="sub">I made all these for you hehe</p>
+          </div>
+        </div>
+
+        <div class="gift-row">
+          <button class="gift" data-goto="screen-rose">Gift 1</button>
+          <button class="gift" data-goto="screen-letter">Gift 2</button>
+          <button class="gift" data-goto="screen-qr">Gift 3</button>
+        </div>
+
+        <button class="restart" data-goto="screen-ask" title="Restart">
+          ♥
+        </button>
+        <div class="restart-label">click to restart!</div>
+      </div>
+    </section>
+
+    <!-- SCREEN 3 (Gift 1) -->
+    <section class="screen" id="screen-rose">
+      <div class="card wide">
+        <div class="rose-layout">
+          <div class="msg left">
+            <div class="bubble">I will always love you<br/>no matter what</div>
+            <div class="bubble">You are the best part<br/>of my life</div>
+          </div>
+
+          <div class="bouquet" aria-label="Bouquet of roses">
+            <div class="paper">
+              <div class="roses">🌹🌹🌹🌹🌹<br/>🌹🌹🌹🌹🌹</div>
+              <div class="ribbon">🎀</div>
+            </div>
+          </div>
+
+          <div class="msg right">
+            <div class="bubble">You will forever be my<br/>only option.</div>
+            <div class="bubble">I can’t imagine a life<br/>without you in it</div>
+          </div>
+        </div>
+
+        <div class="bottom-actions">
+          <button class="btn small" data-goto="screen-gifts">← Back</button>
+          <button class="restart" data-goto="screen-ask" title="Restart">♥</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 4 (Gift 2) -->
+    <section class="screen" id="screen-letter">
+      <div class="card wide">
+        <div class="letter-header">
+          <h1>To: Prah</h1>
+          <div class="xoxo">xoxo</div>
+        </div>
+
+        <div class="letter-paper" role="article" aria-label="Love letter">
+          <p>
+            To the love of my life, you make my life so meaningful and I am so lucky to have you
+            as my Valentine this year.
+          </p>
+          <p>
+            I love you wholeheartedly and I can’t wait to continue loving you for the rest of my life.
+          </p>
+          <p>
+            I know I tell you this everyday but you are literally the most beautiful person I know.
+            Anyways, I love you.
+          </p>
+          <p class="sign">
+            <strong>Always yours, S</strong>
+          </p>
+        </div>
+
+        <div class="bottom-actions">
+          <button class="btn small" data-goto="screen-gifts">← Back</button>
+          <button class="restart" data-goto="screen-ask" title="Restart">♥</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 5 (Gift 3) -->
+    <section class="screen" id="screen-qr">
+      <div class="card wide">
+        <h1 class="center">Scan the QR code!</h1>
+        <p class="center sub">Put any link here: Spotify song, photo album, video, etc.</p>
+
+        <div class="qr-wrap">
+          <div id="qrcode" class="qr"></div>
+        </div>
+
+        <div class="qr-input">
+          <input id="qrText" type="text" placeholder="Paste your link here…" />
+          <button class="btn primary small" id="btnMakeQR">Make QR</button>
+        </div>
+
+        <div class="bottom-actions">
+          <button class="btn small" data-goto="screen-gifts">← Back</button>
+          <button class="restart" data-goto="screen-ask" title="Restart">♥</button>
+        </div>
+
+        <div class="restart-label">click to restart!</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
